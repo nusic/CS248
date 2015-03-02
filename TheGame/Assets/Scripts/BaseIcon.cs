@@ -2,7 +2,7 @@
 using System.Collections;
 
 
-public class IconProperties : MonoBehaviour {
+public class BaseIcon : MonoBehaviour {
 
 	public SpriteRenderer spriteRenderer;
 
