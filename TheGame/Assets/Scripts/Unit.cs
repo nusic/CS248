@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class Unit : MonoBehaviour {
-
+	
 	public Player owner;
 	public SpriteRenderer sr;
+	public Base target;
 
 	public Vector3 vel;
 
@@ -12,6 +13,14 @@ public class Unit : MonoBehaviour {
 	void Start () {
 		sr = transform.GetComponent<SpriteRenderer> ();
 
+	}
+
+	public void init(Player owner, Base target){
+		setOwner(owner);
+		
+		//Just sending out Units in random direction now
+		// Here it should start an animation, moving towards
+		setRandomVelocity(5);
 	}
 
 	public void setOwner(Player p){

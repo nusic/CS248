@@ -33,7 +33,9 @@ public class Base : MonoBehaviour {
 		updateIconSize();
 	}
 
-	public void transferUnits(Base target){
+	//Using vague name "transfer" since the logic for attacking enemy
+	//and moving units withing your own bases is almost the same. 
+	public void sendUnits(Base target){
 		int unitDivision = numUnitsInBase / 2;
 		numUnitsInBase -= unitDivision;
 
@@ -41,15 +43,21 @@ public class Base : MonoBehaviour {
 			Vector3 pos = transform.position + new Vector3(0,0,1);
 			GameObject go = Instantiate(unit, pos, Quaternion.identity) as GameObject;
 			Unit u = go.GetComponent<Unit>();
-			u.setOwner(owner);
-			u.setRandomVelocity(5);
+			u.init(owner, target);
 
 		}
 	}
 
 
-	public void receiveAttack(){
-
+	public void receiveUnit(Unit u){
+		if (u.owner == owner) {
+			numUnitsInBase++;
+		} else {
+			if(--numUnitsInBase <= 0){
+				owner = u.owner;
+			}
+		}
+		Destroy (u);
 	}
 
 

@@ -350,7 +350,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 405278, guid: aa4216b3a7b2e460e9c88f7bc3a029a4, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11405278, guid: aa4216b3a7b2e460e9c88f7bc3a029a4, type: 2}
       propertyPath: owner
@@ -363,7 +363,15 @@ Prefab:
     - target: {fileID: 11405278, guid: aa4216b3a7b2e460e9c88f7bc3a029a4, type: 2}
       propertyPath: unit
       value: 
-      objectReference: {fileID: 105474, guid: ae57116dc5e81426b9c347040a626757, type: 2}
+      objectReference: {fileID: 130454, guid: ae57116dc5e81426b9c347040a626757, type: 2}
+    - target: {fileID: 405278, guid: aa4216b3a7b2e460e9c88f7bc3a029a4, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 405278, guid: aa4216b3a7b2e460e9c88f7bc3a029a4, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa4216b3a7b2e460e9c88f7bc3a029a4, type: 2}
   m_RootGameObject: {fileID: 1706451644}
@@ -414,7 +422,7 @@ MonoBehaviour:
   unitCapacity: 30
   unitGenerationRate: 1
   owner: {fileID: 1180942399}
-  unit: {fileID: 105474, guid: ae57116dc5e81426b9c347040a626757, type: 2}
+  unit: {fileID: 130454, guid: ae57116dc5e81426b9c347040a626757, type: 2}
 --- !u!1 &2055579955
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
+/// <summary>
+/// Using a separate class for BaseIcon so that the icon can be scaled 
+/// independently from the actual base. Ie, set the general scale in
+/// in the Base, and let the dynamic rescaling wrt the number of units in the
+/// base happens here.
+/// 
+/// </summary>
 public class BaseIcon : MonoBehaviour {
 
 	public SpriteRenderer spriteRenderer;

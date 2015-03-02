@@ -7,7 +7,7 @@ public class TestInteraction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown ("space")) {
-			GameObject.Find("Base").GetComponent<Base>().transferUnits(null);
+			GameObject.Find("Base").GetComponent<Base>().sendUnits(null);
 		}
 	}
 }
