@@ -46,12 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Base.cs" />
-     <Compile Include="Assets\Scripts\BaseIcon.cs" />
-     <Compile Include="Assets\Scripts\DestroyByTime.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\TestInteraction.cs" />
-     <Compile Include="Assets\Scripts\Unit.cs" />
+     <Compile Include="Assets\Scripts\Base\Base.cs" />
+     <Compile Include="Assets\Scripts\Base\BaseIcon.cs" />
+     <Compile Include="Assets\Scripts\Interaction\TestInteraction.cs" />
+     <Compile Include="Assets\Scripts\Other\DestroyByTime.cs" />
+     <Compile Include="Assets\Scripts\Other\HelperFunctions.cs" />
+     <Compile Include="Assets\Scripts\OwnershipController.cs" />
+     <Compile Include="Assets\Scripts\Player\OwnerScript.cs" />
+     <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\Unit\Unit.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -3,6 +3,11 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - Base
+  - P1
+  - P2
+  - P3
+  - P4
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
