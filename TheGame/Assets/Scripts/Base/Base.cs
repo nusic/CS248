@@ -9,7 +9,7 @@ public class Base : MonoBehaviour {
 
 	public BaseIcon baseIcon;
 	public Player owner;
-	public Unit unit;
+	public Unit unitPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -22,31 +22,28 @@ public class Base : MonoBehaviour {
 		InvokeRepeating ("UpdateUnits", -1, 1.0f/unitGenerationRate);
 	}
 
-
-	void Update () {
-
-	}
-
-	//Using vague name "transfer" since the logic for attacking enemy
-	//and moving units withing your own bases is almost the same. 
 	public void sendUnits(Base target){
 		int unitDivision = numUnitsInBase / 2;
 		numUnitsInBase -= unitDivision;
 
 		for (int i = 0; i<unitDivision; ++i) {
-			Vector3 pos = transform.position + HelperFunctions.RandomDirectionXY(20);
+			Vector3 pos = transform.position + HelperFunctions.RandomDirectionXY(10);
 
-			Unit u = Instantiate(unit, pos, Quaternion.identity) as Unit;
+			Unit u = Instantiate(unitPrefab, pos, Quaternion.identity) as Unit;
 			u.init(owner, target);
 		}
 		updateIconSize();
 	}
 
-	void OnTriggerEnter2D(Collider2D coll) {
-		receiveUnit (coll.gameObject.GetComponent<Unit>());
+
+	//Invoked when unit collides into base 
+	void OnTriggerStay2D(Collider2D unitCollider) {
+		receiveUnit (unitCollider.gameObject.GetComponent<Unit>());
 	}
 
-	public void receiveUnit(Unit unit){
+	//Receive a unit to the base. If the unit is friendly, increment 
+	//number of units in base, otherwise decrement (ie base is attacked)
+	private void receiveUnit(Unit unit){
 		if (this != unit.target) {
 			return;
 		}
@@ -54,7 +51,7 @@ public class Base : MonoBehaviour {
 		if (unit.owner == owner) {
 			numUnitsInBase++;
 		} else {
-			if(--numUnitsInBase <= 0){
+			if(--numUnitsInBase < 0){
 				setOwner(unit.owner);
 			}
 		}
@@ -62,18 +59,20 @@ public class Base : MonoBehaviour {
 		Destroy (unit.gameObject);
 	}
 
+
 	private void setOwner(Player owner){
 		this.owner = owner;
 		baseIcon.setColor (this.owner.color);
 	}
 
+	// Should be called when ever numUnitsInBase is changed
 	private void updateIconSize(){
 		float newSize = Mathf.Sqrt(1 + numUnitsInBase/5.0f);
-		baseIcon.transform.localScale = new Vector3(newSize, newSize, 1);
+		transform.localScale = new Vector3(newSize, newSize, 1);
 	}
 
 	// Increase or decrease units wrt base capacity.
-	void UpdateUnits(){
+	private void UpdateUnits(){
 		if (numUnitsInBase < unitCapacity) {
 			numUnitsInBase++;
 		}

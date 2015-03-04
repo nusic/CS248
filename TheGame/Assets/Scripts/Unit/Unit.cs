@@ -6,6 +6,9 @@ public class Unit : MonoBehaviour {
 	public Player owner;
 	public SpriteRenderer sr;
 	public Base target;
+	public float maxSpeed;
+	public float minSpeed;
+	public float takeOff;
 
 	// Use this for initialization
 	void Start () {
@@ -16,20 +19,35 @@ public class Unit : MonoBehaviour {
 		setOwner(owner);
 		this.target = target;
 
-		//Vector2 directionToTarget = (target.transform.position - transform.position).normalized;
-		//rigidbody2D.velocity = owner.unitSpeed * directionToTarget;
+		startAnimation();
+	}
 
+
+	protected void startAnimation(){
+
+		//As an example one can use springs. 
+		//Maybe different units should have different animations
 		SpringJoint2D spring = GetComponent<SpringJoint2D> ();
 		spring.connectedBody = target.gameObject.GetComponent<Rigidbody2D>();
-		rigidbody2D.velocity = HelperFunctions.RandomDirectionXY (5);
+
+		//Shout out plane in random direction 
+		rigidbody2D.velocity = HelperFunctions.RandomDirectionXY (takeOff);
 	}
 
-	public void setOwner(Player p){
+	private void setOwner(Player p){
 		owner = p;
 		sr.color = p.color;
-		tag = p.name;
 	}
 
+	void FixedUpdate(){
+		float speed = rigidbody2D.velocity.magnitude;
+		if (speed > maxSpeed) {
+			rigidbody2D.velocity = maxSpeed * rigidbody2D.velocity.normalized;
+		}
+		else if (speed < minSpeed){
+			rigidbody2D.velocity = minSpeed * rigidbody2D.velocity.normalized;
+		}
+	}
 
 	// Update is called once per frame
 	void Update () {
