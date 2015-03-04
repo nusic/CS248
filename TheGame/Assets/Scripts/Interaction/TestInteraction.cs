@@ -13,7 +13,7 @@ public class TestInteraction : MonoBehaviour {
 			Base b2 = objs[1].GetComponent<Base>();
 
 			b1.sendUnits(b2);
-			//.sendUnits(null);
+			b2.sendUnits(b1);
 		}
 	}
 }

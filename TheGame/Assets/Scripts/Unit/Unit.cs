@@ -21,6 +21,7 @@ public class Unit : MonoBehaviour {
 
 		SpringJoint2D spring = GetComponent<SpringJoint2D> ();
 		spring.connectedBody = target.gameObject.GetComponent<Rigidbody2D>();
+		rigidbody2D.velocity = HelperFunctions.RandomDirectionXY (5);
 	}
 
 	public void setOwner(Player p){
