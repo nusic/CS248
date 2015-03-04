@@ -51,7 +51,6 @@
      <Compile Include="Assets\Scripts\Interaction\TestInteraction.cs" />
      <Compile Include="Assets\Scripts\Other\DestroyByTime.cs" />
      <Compile Include="Assets\Scripts\Other\HelperFunctions.cs" />
-     <Compile Include="Assets\Scripts\Player\OwnerScript.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Unit\Unit.cs" />
  <Reference Include="UnityEngine.UI">
