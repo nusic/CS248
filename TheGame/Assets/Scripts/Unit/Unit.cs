@@ -16,8 +16,11 @@ public class Unit : MonoBehaviour {
 		setOwner(owner);
 		this.target = target;
 
-		Vector2 directionToTarget = (target.transform.position - transform.position).normalized;
-		rigidbody2D.velocity = owner.unitSpeed * directionToTarget;
+		//Vector2 directionToTarget = (target.transform.position - transform.position).normalized;
+		//rigidbody2D.velocity = owner.unitSpeed * directionToTarget;
+
+		SpringJoint2D spring = GetComponent<SpringJoint2D> ();
+		spring.connectedBody = target.gameObject.GetComponent<Rigidbody2D>();
 	}
 
 	public void setOwner(Player p){

@@ -6,10 +6,10 @@ public class Player : MonoBehaviour {
 
 	public Color color;
 	public float unitSpeed;
-	private static int player_id = 0;
+	private static int next_player_id = 1;
 
 	void Start(){
-		name = "P" + player_id++;
+		name = "P" + next_player_id++;
 	}
 
 }

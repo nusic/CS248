@@ -13,6 +13,7 @@ GameObject:
   - 50: {fileID: 5014704}
   - 58: {fileID: 5814704}
   - 114: {fileID: 11414702}
+  - 231: {fileID: 23181428}
   m_Layer: 9
   m_Name: UnitPrefab
   m_TagString: Untagged
@@ -43,7 +44,7 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -106,6 +107,20 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f150d8dfdcac640d88fae6cb705e453b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!231 &23181428
+SpringJoint2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114704}
+  m_Enabled: 1
+  m_CollideConnected: 1
+  m_ConnectedRigidBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_Distance: .00499999989
+  m_DampingRatio: .100000001
+  m_Frequency: .200000003
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
