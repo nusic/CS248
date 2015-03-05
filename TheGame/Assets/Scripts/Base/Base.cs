@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Base : MonoBehaviour {
@@ -6,20 +7,21 @@ public class Base : MonoBehaviour {
 	public int numUnitsInBase = 5;
 	public int unitCapacity = 20;
 	public float unitGenerationRate = 1;
-
+	
 	public BaseIcon baseIcon;
 	public Player owner;
 	public Unit unitPrefab;
+	public Text label;
 
 	// Use this for initialization
 	void Start () {
 
 		if (owner != null) {
-			baseIcon.setColor(owner.color);
+			setOwner(owner);
 		}
 
 		//continously update number of units in base
-		InvokeRepeating ("UpdateUnits", -1, 1.0f/unitGenerationRate);
+		InvokeRepeating ("GenerateUnits", -1, 1.0f/unitGenerationRate);
 	}
 
 	public void sendUnits(Base target){
@@ -32,7 +34,8 @@ public class Base : MonoBehaviour {
 			Unit u = Instantiate(unitPrefab, pos, Quaternion.identity) as Unit;
 			u.init(owner, target);
 		}
-		updateIconSize();
+
+		OnUnitUpdate();
 	}
 
 
@@ -55,7 +58,7 @@ public class Base : MonoBehaviour {
 				setOwner(unit.owner);
 			}
 		}
-		updateIconSize();
+		OnUnitUpdate();
 		Destroy (unit.gameObject);
 	}
 
@@ -63,22 +66,30 @@ public class Base : MonoBehaviour {
 	private void setOwner(Player owner){
 		this.owner = owner;
 		baseIcon.setColor (this.owner.color);
+		label.color = this.owner.color;
 	}
 
-	// Should be called when ever numUnitsInBase is changed
-	private void updateIconSize(){
-		float newSize = Mathf.Sqrt(1 + numUnitsInBase/5.0f);
-		transform.localScale = new Vector3(newSize, newSize, 1);
-	}
 
 	// Increase or decrease units wrt base capacity.
-	private void UpdateUnits(){
+	private void GenerateUnits(){
 		if (numUnitsInBase < unitCapacity) {
 			numUnitsInBase++;
 		}
 		else if (numUnitsInBase > unitCapacity){
 			numUnitsInBase--;
 		}
+		OnUnitUpdate ();
+	}
+
+	private void OnUnitUpdate(){
+		label.text = numUnitsInBase.ToString();
 		updateIconSize();
 	}
+
+	// Should be called when ever numUnitsInBase is changed
+	private void updateIconSize(){
+		float newSize = Mathf.Sqrt(1 + numUnitsInBase/5.0f);
+		baseIcon.transform.localScale = new Vector3(newSize, newSize, 1);
+	}
+
 }

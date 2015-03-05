@@ -48,8 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Base\Base.cs" />
      <Compile Include="Assets\Scripts\Base\BaseIcon.cs" />
+     <Compile Include="Assets\Scripts\Game\MainGameController.cs" />
+     <Compile Include="Assets\Scripts\Interaction\MobileScripts.cs" />
      <Compile Include="Assets\Scripts\Interaction\TestInteraction.cs" />
      <Compile Include="Assets\Scripts\Other\DestroyByTime.cs" />
+     <Compile Include="Assets\Scripts\Other\HUDFPS.cs" />
      <Compile Include="Assets\Scripts\Other\HelperFunctions.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Unit\Unit.cs" />
