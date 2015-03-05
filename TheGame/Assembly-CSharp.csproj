@@ -50,7 +50,7 @@
      <Compile Include="Assets\Scripts\Base\BaseIcon.cs" />
      <Compile Include="Assets\Scripts\Game\MainGameController.cs" />
      <Compile Include="Assets\Scripts\Interaction\MobileScripts.cs" />
-     <Compile Include="Assets\Scripts\Interaction\TestInteraction.cs" />
+     <Compile Include="Assets\Scripts\Interaction\ShootOnSpace.cs" />
      <Compile Include="Assets\Scripts\Other\DestroyByTime.cs" />
      <Compile Include="Assets\Scripts\Other\HUDFPS.cs" />
      <Compile Include="Assets\Scripts\Other\HelperFunctions.cs" />

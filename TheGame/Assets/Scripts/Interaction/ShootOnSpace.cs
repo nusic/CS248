@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestInteraction : MonoBehaviour {
+public class ShootOnSpace : MonoBehaviour {
 
 
 	// Update is called once per frame

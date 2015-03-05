@@ -16,15 +16,19 @@ public class Base : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if (owner != null) {
-			setOwner(owner);
-		}
+
+		setOwner(owner);
+		OnUnitUpdate();
 
 		//continously update number of units in base
 		InvokeRepeating ("GenerateUnits", -1, 1.0f/unitGenerationRate);
 	}
 
 	public void sendUnits(Base target){
+		if (target == this) {
+			return;
+		}
+
 		int unitDivision = numUnitsInBase / 2;
 		numUnitsInBase -= unitDivision;
 
@@ -54,7 +58,7 @@ public class Base : MonoBehaviour {
 		if (unit.owner == owner) {
 			numUnitsInBase++;
 		} else {
-			if(--numUnitsInBase < 0){
+			if(--numUnitsInBase <= 0){
 				setOwner(unit.owner);
 			}
 		}
@@ -63,15 +67,27 @@ public class Base : MonoBehaviour {
 	}
 
 
-	private void setOwner(Player owner){
-		this.owner = owner;
-		baseIcon.setColor (this.owner.color);
+	private void setOwner(Player newOwner){
+		this.owner = newOwner;
+
+		if (this.owner == null) {
+			baseIcon.setColor(Player.NullColor);
+			label.color = Player.NullColor;
+			return;
+		}
+
+		baseIcon.setColor(this.owner.color);
 		label.color = this.owner.color;
+
 	}
 
 
 	// Increase or decrease units wrt base capacity.
 	private void GenerateUnits(){
+		//Don't generate units if no uwner
+		if (!owner) {
+			return;
+		}
 		if (numUnitsInBase < unitCapacity) {
 			numUnitsInBase++;
 		}

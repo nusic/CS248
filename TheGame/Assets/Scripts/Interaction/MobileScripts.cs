@@ -3,9 +3,13 @@ using System.Collections;
 
 public class MobileScripts : MonoBehaviour {
 
+
+	public Player player;
+	
+
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -16,19 +20,62 @@ public class MobileScripts : MonoBehaviour {
 
 	void TapCheck(){
 		foreach(Touch touch in Input.touches){
-			if (touch.phase == TouchPhase.Began) {
-				ProcessInput (touch.position);
+			if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved) {
+				ProcessOnDown (touch.position);
+			}
+			else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Ended) {
+				ProcessOnRelease (touch.position);
 			}
 		}
 	}
 
 	void MouseCheck(){
-		if (Input.GetMouseButton (0)) {
-			ProcessInput (Input.mousePosition);
+		if (Input.GetMouseButton(0)) {
+			ProcessOnDown (Input.mousePosition);
+		} else if (Input.GetMouseButtonUp (0)) {
+			ProcessOnRelease (Input.mousePosition);
 		}
 	}
 
-	void ProcessInput(Vector3 pos){
+	void ProcessOnDown(Vector3 pos){
 		//Do stuff with mouse/touch position
+		foreach (GameObject go in GameObject.FindGameObjectsWithTag("Base")) {
+			Base b = go.GetComponent<Base>();
+			Vector3 posWorld = Camera.main.ScreenToWorldPoint(pos);
+			if(b.collider2D.OverlapPoint(new Vector2(posWorld.x, posWorld.y))){
+				ProcessDownOnBase(b);
+			}
+		}
+	}
+
+	Base baseAtPosition(Vector3 pos){
+		foreach (GameObject go in GameObject.FindGameObjectsWithTag("Base")) {
+			Base b = go.GetComponent<Base>();
+			Vector3 posWorld = Camera.main.ScreenToWorldPoint(pos);
+			if(b.collider2D.OverlapPoint(new Vector2(posWorld.x, posWorld.y))){
+				return b;
+			}
+		}
+		return null;
+	}
+
+	void ProcessDownOnBase(Base b){
+		if (b.owner == player) {
+			if (!player.selectedBases.Contains (b)) {
+				player.selectedBases.Add (b);
+			}
+		} else if (player.selectedBases.Count > 0) {
+			// Provide visual feedback for attacking!
+		}
+	}
+
+	void ProcessOnRelease(Vector3 posScreen){
+		Base target = baseAtPosition(posScreen);
+		if (target) {
+			foreach (Base b in player.selectedBases){
+				b.sendUnits(target);
+			}
+		}
+		player.selectedBases.Clear();
 	}
 }
