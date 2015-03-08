@@ -39,6 +39,7 @@ public class MobileScripts : MonoBehaviour {
 
 	void ProcessOnDown(Vector3 pos){
 		//Do stuff with mouse/touch position
+		/*
 		foreach (GameObject go in GameObject.FindGameObjectsWithTag("Base")) {
 			Base b = go.GetComponent<Base>();
 			Vector3 posWorld = Camera.main.ScreenToWorldPoint(pos);
@@ -46,6 +47,8 @@ public class MobileScripts : MonoBehaviour {
 				ProcessDownOnBase(b);
 			}
 		}
+		*/
+		ProcessDownOnBase (baseAtPosition (pos));
 	}
 
 	Base baseAtPosition(Vector3 pos){
@@ -60,22 +63,25 @@ public class MobileScripts : MonoBehaviour {
 	}
 
 	void ProcessDownOnBase(Base b){
+		if (b == null) {
+			player.aimAt(null);
+			return;
+		}
 		if (b.owner == player) {
-			if (!player.selectedBases.Contains (b)) {
-				player.selectedBases.Add (b);
+			if (!player.hasSelected(b)) {
+				player.addToSelection (b);
 			}
-		} else if (player.selectedBases.Count > 0) {
-			// Provide visual feedback for attacking!
+		} 
+		if (player.selectCount() > 0) {
+			player.aimAt(b);
 		}
 	}
 
 	void ProcessOnRelease(Vector3 posScreen){
 		Base target = baseAtPosition(posScreen);
 		if (target) {
-			foreach (Base b in player.selectedBases){
-				b.sendUnits(target);
-			}
+			player.selectionSendTo(target);
 		}
-		player.selectedBases.Clear();
+		player.clearSelection();
 	}
 }

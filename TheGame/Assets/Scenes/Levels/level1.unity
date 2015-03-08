@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 211106389
   m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 552059f13f43c4036953e711c761549b, type: 3}
-  m_Color: {r: .463235319, g: .16349481, b: .16349481, a: 1}
+  m_Color: {r: .529411793, g: .276384085, b: .276384085, a: 1}
 --- !u!4 &35385525
 Transform:
   m_ObjectHideFlags: 0
@@ -376,6 +376,18 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 11458486, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
+      propertyPath: color.r
+      value: .517647088
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458486, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
+      propertyPath: color.g
+      value: .980392158
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458486, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
+      propertyPath: color.b
+      value: .517647088
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
   m_RootGameObject: {fileID: 586138074}
@@ -409,8 +421,8 @@ Transform:
   m_LocalPosition: {x: 22.8636684, y: -54.9214821, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
-  - {fileID: 1019323417}
   - {fileID: 1080021913}
+  - {fileID: 1019323417}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!61 &277357218
@@ -423,7 +435,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 15, y: 15}
   m_Center: {x: 0, y: 0}
 --- !u!50 &277357219
 Rigidbody2D:
@@ -488,7 +500,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 15, y: 15}
   m_Center: {x: 0, y: 0}
 --- !u!50 &317852315
 Rigidbody2D:
@@ -758,15 +770,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11458486, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
       propertyPath: color.r
-      value: .111591689
+      value: .373918682
       objectReference: {fileID: 0}
     - target: {fileID: 11458486, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
       propertyPath: color.g
-      value: .532946706
+      value: .678012908
       objectReference: {fileID: 0}
     - target: {fileID: 11458486, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
       propertyPath: color.b
-      value: .948529422
+      value: .977941155
       objectReference: {fileID: 0}
     - target: {fileID: 158486, guid: d1b8d9258ae7d4c119d512b592df35d3, type: 2}
       propertyPath: m_Name
@@ -809,9 +821,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d5af674ee94026951fe75d57f6a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: .233265698, g: 1, b: .20588237, a: 1}
+  color: {r: .517647088, g: .980392158, b: .517647088, a: 1}
   unitSpeed: 10
-  selectedBases: []
+  selectedPrefab: {fileID: 164636, guid: bfbe9dbcd2ea9444aace85e297b3f6e1, type: 2}
+  attackPrefab: {fileID: 148728, guid: d9ce303055ddd40c099d60952fb93098, type: 2}
+  transferPrefab: {fileID: 101782, guid: f9470cf9a18d040d2bf66a61e85af77e, type: 2}
 --- !u!4 &586138076
 Transform:
   m_ObjectHideFlags: 0
@@ -977,7 +991,7 @@ RectTransform:
   m_Children:
   - {fileID: 41641354}
   m_Father: {fileID: 277357217}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 51.5, y: 145}
@@ -1011,7 +1025,7 @@ Transform:
   m_LocalScale: {x: 1.39999998, y: 1.39999998, z: 1}
   m_Children: []
   m_Father: {fileID: 277357217}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!114 &1080021914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,6 +1247,14 @@ Prefab:
       propertyPath: owner
       value: 
       objectReference: {fileID: 586138075}
+    - target: {fileID: 22480388, guid: 97bf7bb34b2034a439096d988ae01b5b, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480390, guid: 97bf7bb34b2034a439096d988ae01b5b, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97bf7bb34b2034a439096d988ae01b5b, type: 2}
   m_RootGameObject: {fileID: 277357216}
@@ -1408,7 +1430,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 15, y: 15}
   m_Center: {x: 0, y: 0}
 --- !u!50 &1621379140
 Rigidbody2D:
@@ -1599,9 +1621,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6d5af674ee94026951fe75d57f6a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: .111591689, g: .532946706, b: .948529422, a: 1}
+  color: {r: .373918682, g: .678012908, b: .977941155, a: 1}
   unitSpeed: 10
-  selectedBases: []
+  selectedPrefab: {fileID: 164636, guid: bfbe9dbcd2ea9444aace85e297b3f6e1, type: 2}
+  attackPrefab: {fileID: 148728, guid: d9ce303055ddd40c099d60952fb93098, type: 2}
+  transferPrefab: {fileID: 101782, guid: f9470cf9a18d040d2bf66a61e85af77e, type: 2}
 --- !u!4 &1995189500
 Transform:
   m_ObjectHideFlags: 0

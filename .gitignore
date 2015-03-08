@@ -30,3 +30,7 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+
+# builds folders
+TheGame/iOS
+TheGame/Android
