@@ -8,7 +8,7 @@ public class Unit : MonoBehaviour {
 	public Base target;
 	public float maxSpeed;
 	public float minSpeed;
-	public float takeOff;
+	public float takeOffSpeed;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,7 @@ public class Unit : MonoBehaviour {
 		spring.connectedBody = target.gameObject.GetComponent<Rigidbody2D>();
 
 		//Shout out plane in random direction 
-		rigidbody2D.velocity = HelperFunctions.RandomDirectionXY (takeOff);
+		rigidbody2D.velocity = HelperFunctions.RandomDirectionXY (takeOffSpeed);
 	}
 
 	private void setOwner(Player p){
