@@ -24,14 +24,18 @@ public class Unit : MonoBehaviour {
 
 
 	protected void startAnimation(){
-
 		//As an example one can use springs. 
 		//Maybe different units should have different animations
 		SpringJoint2D spring = GetComponent<SpringJoint2D> ();
 		spring.connectedBody = target.gameObject.GetComponent<Rigidbody2D>();
 
 		//Shout out plane in random direction 
-		rigidbody2D.velocity = HelperFunctions.RandomDirectionXY (takeOffSpeed);
+		rigidbody2D.velocity = HelperFunctions.RandomDirectionXY (Random.Range(takeOffSpeed/2,takeOffSpeed));
+
+		Vector2 p1 = transform.position;
+		Vector2 p2 = target.transform.position;
+		float angle = Mathf.Atan2 (p2.y - p1.y, p2.x - p1.x);
+		rigidbody2D.rotation = 180*angle/Mathf.PI;
 	}
 
 	private void setOwner(Player p){

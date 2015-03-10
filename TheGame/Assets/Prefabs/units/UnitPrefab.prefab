@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 114704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +41,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 114704}
   m_Mass: 1
   m_LinearDrag: 2
-  m_AngularDrag: 20
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -57,7 +57,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 2
+  m_Radius: .699999988
   m_Center: {x: 0, y: 0}
 --- !u!114 &11414702
 MonoBehaviour:
@@ -73,9 +73,9 @@ MonoBehaviour:
   owner: {fileID: 0}
   sr: {fileID: 21214704}
   target: {fileID: 0}
-  maxSpeed: 1000
-  minSpeed: 30
-  takeOff: 50
+  maxSpeed: 200
+  minSpeed: 10
+  takeOffSpeed: 200
 --- !u!114 &11414704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 4059515771
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f150d8dfdcac640d88fae6cb705e453b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d68b064492844ab0af474de86cc2007, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!231 &23181428
 SpringJoint2D:
@@ -123,7 +123,7 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Distance: .00499999989
   m_DampingRatio: 0
-  m_Frequency: .200000003
+  m_Frequency: .300000012
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

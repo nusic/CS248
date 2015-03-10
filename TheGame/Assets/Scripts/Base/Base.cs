@@ -33,7 +33,7 @@ public class Base : MonoBehaviour {
 		numUnitsInBase -= unitDivision;
 
 		for (int i = 0; i<unitDivision; ++i) {
-			Vector3 pos = transform.position + HelperFunctions.RandomDirectionXY(10);
+			Vector3 pos = transform.position;
 
 			Unit u = Instantiate(unitPrefab, pos, Quaternion.identity) as Unit;
 			u.init(owner, target);
