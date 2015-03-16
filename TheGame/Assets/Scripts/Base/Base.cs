@@ -12,16 +12,17 @@ public class Base : MonoBehaviour {
 	public Player owner;
 	public Unit unitPrefab;
 	public Text label;
+	
+	public float takeOffTime;
+
 
 	// Use this for initialization
 	void Start () {
-
-
 		setOwner(owner);
 		OnUnitUpdate();
 
 		//continously update number of units in base
-		InvokeRepeating ("GenerateUnits", -1, 1.0f/unitGenerationRate);
+		InvokeRepeating ("GenerateUnits", 2, 1.0f/unitGenerationRate);
 	}
 
 	public void sendUnits(Base target){
@@ -32,15 +33,19 @@ public class Base : MonoBehaviour {
 		int unitDivision = numUnitsInBase / 2;
 		numUnitsInBase -= unitDivision;
 
-		for (int i = 0; i<unitDivision; ++i) {
-			Vector3 pos = transform.position;
+		StartCoroutine(sendUnitsRoutine(target, unitDivision));
+	}
 
+	protected IEnumerator sendUnitsRoutine(Base target, int numUnits){
+		for (int i = 0; i<numUnits; ++i) {
+			Vector3 pos = transform.position;
 			Unit u = Instantiate(unitPrefab, pos, Quaternion.identity) as Unit;
 			u.init(owner, target);
+			OnUnitUpdate();
+			yield return new WaitForSeconds(takeOffTime);
 		}
-
-		OnUnitUpdate();
 	}
+
 
 
 	//Invoked when unit collides into base 
@@ -77,7 +82,7 @@ public class Base : MonoBehaviour {
 		}
 
 		baseIcon.setColor(this.owner.color);
-		label.color = this.owner.color;
+		label.color = 2.0f*this.owner.color;
 
 	}
 

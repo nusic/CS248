@@ -77,7 +77,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1872749, y: .919195175, z: 0}
+  m_LocalPosition: {x: 25.4670029, y: 45.9424858, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 22480388}
@@ -138,8 +138,9 @@ MonoBehaviour:
   unitGenerationRate: 2
   baseIcon: {fileID: 11480384}
   owner: {fileID: 0}
-  unitPrefab: {fileID: 11414702, guid: ae57116dc5e81426b9c347040a626757, type: 2}
+  unitPrefab: {fileID: 11421856, guid: 2a42f98a55543426190ccb770e53b62c, type: 2}
   label: {fileID: 11480390}
+  takeOffTime: .0500000007
 --- !u!114 &11480384
 MonoBehaviour:
   m_ObjectHideFlags: 1
