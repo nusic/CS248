@@ -2,6 +2,15 @@
 using UnityEngine.UI;
 using System.Collections;
 
+[System.Serializable]
+public class BaseSounds{
+	public AudioClip explosion1;
+	public AudioClip explosion2;
+	public AudioClip onTransfer;
+
+}
+
+[RequireComponent(typeof(AudioSource))]
 public class Base : MonoBehaviour {
 
 	public int numUnitsInBase = 5;
@@ -14,6 +23,8 @@ public class Base : MonoBehaviour {
 	public Text label;
 	
 	public float takeOffTime;
+
+	public BaseSounds sounds;
 
 
 	// Use this for initialization
@@ -61,9 +72,11 @@ public class Base : MonoBehaviour {
 		}
 
 		if (unit.owner == owner) {
+			playUnitTransferSound();
 			numUnitsInBase++;
 		} else {
-			if(--numUnitsInBase <= 0){
+			playExplosionSound();
+			if(--numUnitsInBase <= 0) {
 				setOwner(unit.owner);
 			}
 		}
@@ -113,4 +126,19 @@ public class Base : MonoBehaviour {
 		baseIcon.transform.localScale = new Vector3(newSize, newSize, 1);
 	}
 
+	private void playUnitTransferSound(){
+		float f = (1.0f) / 36 * (numUnitsInBase-12);
+		audio.pitch = Mathf.Pow (2, f);
+		audio.PlayOneShot (sounds.onTransfer, 0.2f);
+	}
+
+	private void playExplosionSound(){
+		audio.pitch = Random.Range(0.7f,1.0f);
+		if (Random.Range (0, 2) > 0.3) {
+			audio.PlayOneShot (sounds.explosion1, 0.6F);
+		}
+		else{
+			audio.PlayOneShot (sounds.explosion2, 0.6F);
+		}
+	}
 }

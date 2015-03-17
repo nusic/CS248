@@ -2,14 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class PlayerSounds {
+	public AudioClip jet;
+	public AudioClip attack;
+	public AudioClip transfer;
+	public AudioClip aimEnemy;
+	public AudioClip select;
+}
+
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour {
-	
+
 	public Color color;
 	public float unitSpeed;
 
 	public GameObject selectedPrefab;
 	public GameObject attackPrefab;
 	public GameObject transferPrefab;
+
+	public PlayerSounds sounds;
 
 	//Use non-generic Hashtables instead?
 	private List<Base> selectedBases = new List<Base>();
@@ -52,9 +64,11 @@ public class Player : MonoBehaviour {
 		if (target) {
 			Vector3 pos = target.transform.position;
 			if (target.owner == this){
+				audio.PlayOneShot(sounds.select, 0.2f);
 				aim = (GameObject)Instantiate(transferPrefab, pos, Quaternion.identity);	
 			}
 			else{
+				audio.PlayOneShot(sounds.aimEnemy, 0.2f);
 				aim = (GameObject)Instantiate(attackPrefab, pos, Quaternion.identity);
 			}
 		} 
@@ -66,6 +80,15 @@ public class Player : MonoBehaviour {
 			b.sendUnits(target);
 		}
 		clearSelection();
+		audio.PlayOneShot (sounds.jet);
+
+		if (target.owner == this) {
+			audio.PlayOneShot(sounds.transfer, 0.5f);
+		}
+		else{
+			audio.PlayOneShot(sounds.attack, 0.5f);
+		}
+
 	}
 	
 	public void clearSelection(){
