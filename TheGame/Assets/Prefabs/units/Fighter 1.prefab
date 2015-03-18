@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 198116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -35.028904, y: 47.0266609, z: 0}
-  m_LocalScale: {x: .699999988, y: .699999988, z: 1}
+  m_LocalScale: {x: .400000006, y: .400000006, z: 1}
   m_Children:
   - {fileID: 498116}
   m_Father: {fileID: 0}
@@ -218,7 +218,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 4059515771
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6142b2bd8438e4b59811d1606e1c40bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb76ba1f7b65f4acb96f91f15d401fe1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!231 &23198118
 SpringJoint2D:
