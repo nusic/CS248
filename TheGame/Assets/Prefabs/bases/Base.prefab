@@ -78,11 +78,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1872749, y: .919195175, z: 0}
+  m_LocalPosition: {x: 22.8636684, y: -54.9214821, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
-  - {fileID: 22480388}
   - {fileID: 480390}
+  - {fileID: 22480388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &480390
@@ -93,10 +93,10 @@ Transform:
   m_GameObject: {fileID: 180386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.39999998, y: 1.39999998, z: 1}
+  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
   m_Children: []
   m_Father: {fileID: 480388}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!50 &5080390
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 15, y: 15}
+  m_Size: {x: 13, y: 7}
   m_Center: {x: 0, y: 0}
 --- !u!82 &8249090
 AudioSource:
@@ -192,12 +192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664957b0781aa4ad3bb1213296353ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numUnitsInBase: 5
-  unitCapacity: 50
-  unitGenerationRate: 5
+  numUnitsInBase: 20
+  unitCapacity: 20
+  unitGenerationRate: 1
   baseIcon: {fileID: 11480384}
   owner: {fileID: 0}
-  unitPrefab: {fileID: 11498116, guid: 9b3eb2e56acd54a37a7059ec3a8c1c47, type: 2}
+  unitPrefab: {fileID: 11421856, guid: 2a42f98a55543426190ccb770e53b62c, type: 2}
   label: {fileID: 11480390}
   takeOffTime: 0
   sounds:
@@ -301,7 +301,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e5ab2aa0a5e8e4014b16197da49aa592, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19b048ec5357044b5b8a90d271adc51e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!222 &22280390
 CanvasRenderer:
@@ -338,7 +338,7 @@ RectTransform:
   m_Children:
   - {fileID: 22480390}
   m_Father: {fileID: 480388}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 51.5, y: 145}
@@ -359,7 +359,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -51.4000015, y: -154.800003}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000
 Prefab:

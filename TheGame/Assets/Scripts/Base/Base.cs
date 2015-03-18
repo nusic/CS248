@@ -124,7 +124,7 @@ public class Base : MonoBehaviour {
 	// Should be called when ever numUnitsInBase is changed
 	private void updateIconSize(){
 		float newSize = Mathf.Sqrt(1 + numUnitsInBase/5.0f);
-		baseIcon.transform.localScale = new Vector3(newSize, newSize, 1);
+		transform.localScale = new Vector3(newSize, newSize, 1);
 	}
 
 	private void playUnitTransferSound(){
