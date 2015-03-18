@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Interaction\MobileScripts.cs" />
      <Compile Include="Assets\Scripts\Interaction\ShootOnSpace.cs" />
      <Compile Include="Assets\Scripts\Other\DestroyByTime.cs" />
+     <Compile Include="Assets\Scripts\Other\Destroyer.cs" />
      <Compile Include="Assets\Scripts\Other\HUDFPS.cs" />
      <Compile Include="Assets\Scripts\Other\HelperFunctions.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />

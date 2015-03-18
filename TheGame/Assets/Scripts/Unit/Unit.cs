@@ -3,10 +3,15 @@ using System.Collections;
 
 
 public class Unit : MonoBehaviour {
-	
+
+	[HideInInspector]
 	public Player owner;
-	public SpriteRenderer sr;
+	[HideInInspector]
 	public Base target;
+
+	public SpriteRenderer sr;
+	public GameObject explosionPrefab;
+
 	public float maxSpeed;
 	public float minSpeed;
 	public float takeOffSpeed;

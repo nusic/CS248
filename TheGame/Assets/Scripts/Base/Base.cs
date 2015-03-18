@@ -75,6 +75,7 @@ public class Base : MonoBehaviour {
 			playUnitTransferSound();
 			numUnitsInBase++;
 		} else {
+			Instantiate(unit.explosionPrefab, unit.transform.position, unit.transform.rotation);
 			playExplosionSound();
 			if(--numUnitsInBase <= 0) {
 				setOwner(unit.owner);

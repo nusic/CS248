@@ -83,10 +83,10 @@ public class Player : MonoBehaviour {
 		audio.PlayOneShot (sounds.jet);
 
 		if (target.owner == this) {
-			audio.PlayOneShot(sounds.transfer, 0.5f);
+			audio.PlayOneShot(sounds.transfer, 0.3f);
 		}
 		else{
-			audio.PlayOneShot(sounds.attack, 0.5f);
+			audio.PlayOneShot(sounds.attack, 0.3f);
 		}
 
 	}

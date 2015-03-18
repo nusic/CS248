@@ -159,8 +159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  sr: {fileID: 21298116}
   target: {fileID: 0}
+  sr: {fileID: 21298116}
+  explosionPrefab: {fileID: 176304, guid: 0ea062e0e91ad4c89bc818f51c292e7f, type: 2}
   maxSpeed: 50
   minSpeed: 10
   takeOffSpeed: 50
