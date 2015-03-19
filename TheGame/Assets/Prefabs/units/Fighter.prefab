@@ -16,7 +16,7 @@ GameObject:
   - 231: {fileID: 23121858}
   m_Layer: 10
   m_Name: Fighter
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,9 +103,9 @@ MonoBehaviour:
   target: {fileID: 0}
   sr: {fileID: 21221858}
   explosionPrefab: {fileID: 176304, guid: 0ea062e0e91ad4c89bc818f51c292e7f, type: 2}
-  maxSpeed: 50
+  maxSpeed: 70
   minSpeed: 10
-  takeOffSpeed: 50
+  takeOffSpeed: 100
 --- !u!114 &11421858
 MonoBehaviour:
   m_ObjectHideFlags: 1

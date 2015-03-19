@@ -78,7 +78,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.8636684, y: -54.9214821, z: 0}
+  m_LocalPosition: {x: 39.8752365, y: -10.0744286, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 480390}
@@ -192,14 +192,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664957b0781aa4ad3bb1213296353ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numUnitsInBase: 20
+  numUnitsInBase: 10
   unitCapacity: 20
   unitGenerationRate: 1
   baseIcon: {fileID: 11480384}
   owner: {fileID: 0}
   unitPrefab: {fileID: 11421856, guid: 2a42f98a55543426190ccb770e53b62c, type: 2}
   label: {fileID: 11480390}
-  takeOffTime: 0
+  takeOffTime: .100000001
   sounds:
     explosion1: {fileID: 8300000, guid: 71c01595597e946cbbed2a9aef03bd6b, type: 3}
     explosion2: {fileID: 8300000, guid: 9f465a64e2ba6480b91899a2dc07968f, type: 3}
@@ -352,13 +352,13 @@ RectTransform:
   m_GameObject: {fileID: 180390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalScale: {x: .300000012, y: .300000012, z: .200000003}
   m_Children: []
   m_Father: {fileID: 22480388}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -51.4000015, y: -154.800003}
+  m_AnchoredPosition: {x: -51.4000015, y: -153}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

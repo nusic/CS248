@@ -9,6 +9,7 @@ public class PlayerSounds {
 	public AudioClip transfer;
 	public AudioClip aimEnemy;
 	public AudioClip select;
+	
 }
 
 [RequireComponent(typeof(AudioSource))]

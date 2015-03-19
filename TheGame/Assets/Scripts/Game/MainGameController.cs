@@ -40,6 +40,18 @@ public class MainGameController : MonoBehaviour {
 				}
 			}
 		}
+
+		//Make sure there are no units still alive
+		if (winner != null) {
+			GameObject[] gos = GameObject.FindGameObjectsWithTag("Unit");
+			foreach (GameObject go in gos){
+				Unit unit = go.GetComponent<Unit>();
+				if(unit.owner != winner){
+					return null;
+				}
+			}
+		}
+
 		return winner;
 	}
 
