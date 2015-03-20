@@ -109,7 +109,8 @@ MonoBehaviour:
     transfer: {fileID: 8300000, guid: 1e7bbade447d64899a32e1c059937165, type: 3}
     aimEnemy: {fileID: 8300000, guid: 1c94f0965c3bd4d59974cc58aafc5cfa, type: 3}
     select: {fileID: 8300000, guid: 07031b61760aa410298fe552642bac79, type: 3}
-  slowness: 0
+  slowness: 7
+  randomness: 6
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

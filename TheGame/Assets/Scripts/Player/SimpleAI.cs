@@ -4,18 +4,26 @@ using System.Collections;
 public class SimpleAI : Player {
 
 	public float slowness;
+	public float randomness;
 
 	// Use this for initialization
 	void Start () {
 		sounds = new PlayerSounds();
-		InvokeRepeating("takeAction", slowness, slowness);
+		StartCoroutine("takeAction");
 	}
-	
 
-	protected void takeAction(){
-		Base weakest = findWeakestEnemyBase();
-		if (weakest != null) {
-			attackWithAllBases (weakest);
+	private float waitTime(){
+		return slowness + Random.Range (-randomness/2, randomness/2);
+	}
+
+	IEnumerator takeAction(){
+		yield return new WaitForSeconds(slowness);
+		while(true){
+			Base weakest = findWeakestEnemyBase();
+			if (weakest != null) {
+				attackWithAllBases (weakest);
+			}
+			yield return new WaitForSeconds (slowness);
 		}
 	}
 

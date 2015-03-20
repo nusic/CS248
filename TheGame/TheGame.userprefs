@@ -1,15 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Game/MainGameController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Base/BomberBase.cs">
     <Files>
-      <File FileName="Assets/Scripts/Base/Base.cs" Line="69" Column="36" />
+      <File FileName="Assets/Scripts/Base/Base.cs" Line="52" Column="57" />
       <File FileName="Assets/Scripts/Unit/Unit.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/Player.cs" Line="61" Column="3" />
+      <File FileName="Assets/Scripts/Player/Player.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Base/BaseIcon.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Unit/PlaySound.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Interaction/MobileScripts.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player/SimpleAI.cs" Line="28" Column="11" />
-      <File FileName="Assets/Scripts/Game/MainGameController.cs" Line="44" Column="45" />
+      <File FileName="Assets/Scripts/Player/SimpleAI.cs" Line="16" Column="48" />
+      <File FileName="Assets/Scripts/Game/MainGameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Base/BomberBase.cs" Line="9" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
